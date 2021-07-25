@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/utama_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentBottom="true"
+    android:background="@color/yellow_500">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardUseCompatPadding="false"
+            card_view:elevation="5dp">
+
+            <LinearLayout
+                android:id="@+id/lay_purpose_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDeskripsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Data Administrasi"
+                    android:textColor="@color/black_200"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="28dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:text="@string/txt_scan_ktp"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_ektp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_ektp"
+                            android:maxLines="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/txt_scan_pbb"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+
+                        <Button
+                            android:id="@+id/bt_unggah_pbb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_bukti_pbb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Scan Bukti Penguasaan Tanah (Sertifikat)/IMTN"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_imtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_imtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/txt_perhitungan_struktur"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_data_sondir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_data_sondir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Scan Kajian Lingkungan: UKL/UPL"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_kajian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_kajian_lingkungan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Scan Andalalin jika diperlukan"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="10dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_andalalin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_andalalin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="30dp"
+                        android:text="Gambar Bangunan Teknis Berkala 1:100 di A3"
+                        android:layout_weight="7"
+                        android:textColor="@color/black_200"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/bg_edittext_yellow">
+                        <Button
+                            android:id="@+id/bt_unggah_gambar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Unggah"
+                            android:layout_marginEnd="5dp"
+                            android:textAllCaps="false"/>
+                        <TextView
+                            android:id="@+id/tv_gambar_bangunan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:ellipsize="end"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bt_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_check"
+            app:backgroundTint="@color/yellow_700"/>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

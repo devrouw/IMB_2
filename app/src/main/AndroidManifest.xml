@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lollipop.imb">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT"/>
+            <data android:mimeType="application/pdf"/>
+        </intent>
+    </queries>
+
+    <application
+        android:name=".view.ApplicationController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IMB"
+        tools:targetApi="m">
+        <provider
+            android:authorities="com.lollipop.imb.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/providerfile"/>
+        </provider>
+        <activity android:name=".view.ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ui.InfoSyaratActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".view.ui.LoginActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".view.ui.DaftarActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".view.ui.PengajuanActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".view.ui.ListPengajuanActivity"
+            android:screenOrientation="fullSensor"/>
+        <activity
+            android:name=".view.ui.FormulirActivity"
+            android:screenOrientation="fullSensor"/>
+    </application>
+
+</manifest>

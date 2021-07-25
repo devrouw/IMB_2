@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">IMB</string>
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+    <string name="app_text">IMB</string>
+    <string name="txt_aplikasi">Aplikasi IMB</string>
+    <string name="txt_keluar">KELUAR</string>
+    <string name="txt_contoh_formulir">LIHAT CONTOH FORMULIR</string>
+    <string name="txt_pengajuan_imb">PENGAJUAN IMB</string>
+    <string name="txt_info_syarat_imb">INFO PERSYARATAN IMB</string>
+    <string name="txt_syarat_imb">Persyaratan IMB</string>
+    <string name="txt_scan_ktp">Scan EKTP Pemilik Tanah</string>
+    <string name="txt_one">1</string>
+    <string name="txt_two">2</string>
+    <string name="txt_scan_pbb">Scan Bukti Lunas PBB tahun terakhir</string>
+    <string name="txt_three">3</string>
+    <string name="txt_scan_kajian">Scan Kajian Lingkungan</string>
+    <string name="txt_four">4</string>
+    <string name="txt_perhitungan_struktur">Perhitungan Struktur dan Data Sondir</string>
+    <string name="txt_contoh">Contoh Formulir</string>
+    <string-array name="txt_imb">
+        <item>Memiliki IMB</item>
+        <item>Tidak Memiliki IMB</item>
+    </string-array>
+    <string-array name="txt_kepemilikan">
+        <item>Perseorangan</item>
+        <item>Badan Usaha/Hukum</item>
+        <item>Pemerintah</item>
+    </string-array>
+    <string-array name="txt_permohonan">
+        <item>Mendirikan Bangunan Gedung Baru</item>
+        <item>Bangunan Gedung Existing Belum Ber-IMB</item>
+        <item>Bangunan Gedung Perubahan</item>
+        <item>Bangunan Gedung Kolektif</item>
+        <item>Bangunan Gedung Prasarana</item>
+        <item>Bangunan Gudang 1300 Meter Persegi</item>
+    </string-array>
+    <string-array name="txt_fungsi_bangunan">
+        <item>Fungsi Hunian</item>
+        <item>Fungsi Keagamaan</item>
+        <item>Fungsi Usaha</item>
+        <item>Fungsi Sosial dan Budaya</item>
+        <item>Khusus</item>
+        <item>Campuran</item>
+    </string-array>
+</resources>

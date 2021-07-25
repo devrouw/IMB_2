@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/yellow_500">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/txt_contoh"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="28sp"
+        android:fontFamily="@font/allerbd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        app:cardCornerRadius="14dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_surat_imb"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_syarat_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_surat_imb"
+                android:fontFamily="@font/allerrg"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:text="Surat Kuasa IMB"/>
+
+            <ImageView
+                android:id="@+id/iv_jaminan_konstruksi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@id/iv_surat_imb"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_syarat_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_jaminan_konstruksi"
+                android:fontFamily="@font/allerrg"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@id/tv_syarat_1"
+                android:text="Surat Pernyataan Jaminan Konstruksi Konsultan"/>
+
+            <ImageView
+                android:id="@+id/iv_surat_penanaman"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@id/iv_jaminan_konstruksi"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_syarat_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_surat_penanaman"
+                android:fontFamily="@font/allerrg"
+                android:layout_below="@id/tv_syarat_2"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="10dp"
+                android:text="Surat Pernyataan Penanaman Pohon"/>
+
+            <ImageView
+                android:id="@+id/iv_surat_kuasa"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="@string/txt_four"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@id/iv_surat_penanaman"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_syarat_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_surat_kuasa"
+                android:fontFamily="@font/allerrg"
+                android:layout_below="@id/tv_syarat_3"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="10dp"
+                android:text="Surat Kuasa Mengatasnamakan IMB"/>
+
+            <ImageView
+                android:id="@+id/iv_jaminan_pemilik"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="@string/txt_four"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@id/iv_surat_kuasa"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:id="@+id/tv_syarat_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_jaminan_pemilik"
+                android:fontFamily="@font/allerrg"
+                android:layout_below="@id/tv_syarat_4"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="10dp"
+                android:text="Surat Pernyataan Jaminan Konstruksi Pemilik"/>
+
+            <ImageView
+                android:id="@+id/iv_menjaga_turap"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="@string/txt_four"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@id/iv_jaminan_pemilik"
+                android:background="@drawable/ic_down_arrow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/iv_menjaga_turap"
+                android:fontFamily="@font/allerrg"
+                android:layout_below="@id/tv_syarat_5"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="10dp"
+                android:text="Surat Pernyataan Jaminan Konstruksi Pemilik"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
