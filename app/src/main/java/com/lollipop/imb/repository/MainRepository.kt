@@ -6,14 +6,14 @@ import com.lollipop.imb.service.model.*
 import com.lollipop.imb.service.network.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 
 
-class MainRepository() {
+class MainRepository {
     val dataResult = MutableLiveData<ResultOfNetwork<KirimData>>()
     val loginResult = MutableLiveData<ResultOfNetwork<LoginData>>()
     val bannerResult = MutableLiveData<ResultOfNetwork<SliderData>>()
@@ -36,13 +36,20 @@ class MainRepository() {
         }
 
     suspend fun pengajuan(case: String, noKtp: String, data: DataPengajuan){
-        val reqBody1: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.scan_ektp)
-        val reqBody2: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.scan_bukti_lunas_pbb)
-        val reqBody3: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.scan_bukti_penguasaan_tanah)
-        val reqBody4: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.perhitungan_data_sondir)
-        val reqBody5: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.scan_kaji_lingkungan)
-        val reqBody6: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.scan_andalalin)
-        val reqBody7: RequestBody = RequestBody.create("multipart/form-file".toMediaTypeOrNull(), data.gambar_bangunan)
+        val reqBody1: RequestBody =
+            data.scan_ektp.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody2: RequestBody =
+            data.scan_bukti_lunas_pbb.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody3: RequestBody =
+            data.scan_bukti_penguasaan_tanah.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody4: RequestBody =
+            data.perhitungan_data_sondir.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody5: RequestBody =
+            data.scan_kaji_lingkungan.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody6: RequestBody =
+            data.scan_andalalin.asRequestBody("multipart/form-file".toMediaTypeOrNull())
+        val reqBody7: RequestBody =
+            data.gambar_bangunan.asRequestBody("multipart/form-file".toMediaTypeOrNull())
 
         val partImage1: MultipartBody.Part = MultipartBody.Part.createFormData("scan_ektp", data.scan_ektp.name, reqBody1)
         val partImage2: MultipartBody.Part = MultipartBody.Part.createFormData("scan_bukti_lunas_pbb", data.scan_bukti_lunas_pbb.name, reqBody2)

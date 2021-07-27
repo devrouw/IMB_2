@@ -9,7 +9,6 @@ import com.lollipop.e_lapor.util.ResultOfNetwork
 import com.lollipop.imb.databinding.ActivityRegisterBinding
 import com.lollipop.imb.service.model.Akun
 import com.lollipop.imb.viewModel.MainViewModel
-import timber.log.Timber
 
 class DaftarActivity : AppCompatActivity() {
     private lateinit var _binding : ActivityRegisterBinding
