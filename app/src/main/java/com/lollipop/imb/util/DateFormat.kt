@@ -1,10 +1,7 @@
-package com.lollipop.e_lapor.util
+package com.lollipop.imb.util
 
-import android.annotation.SuppressLint
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 object DateFormatLocale {
     private val locale = Locale("in", "ID")

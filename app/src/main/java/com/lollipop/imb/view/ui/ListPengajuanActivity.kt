@@ -1,5 +1,6 @@
 package com.lollipop.imb.view.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -31,7 +32,9 @@ class ListPengajuanActivity : AppCompatActivity() {
         initializeAdapter()
 
         with(_binding){
-
+            btAdd.setOnClickListener {
+                startActivity(Intent(this@ListPengajuanActivity,PengajuanActivity::class.java))
+            }
         }
 
         observableLiveData()

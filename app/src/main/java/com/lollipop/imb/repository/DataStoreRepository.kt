@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.map
 import timber.log.Timber
 import java.io.IOException
 
-const val PREFERENCE_NAME = "elapor_preferences"
+const val PREFERENCE_NAME = "imb_preferences"
 
 private object PreferenceKeys {
     val loginStatus = booleanPreferencesKey("loginStatus")
