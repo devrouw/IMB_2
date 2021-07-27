@@ -1,4 +1,4 @@
-package com.lollipop.e_lapor.util
+package com.lollipop.imb.util
 
 /**
  * Sealed class used in manage result network request

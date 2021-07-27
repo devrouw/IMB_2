@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.lollipop.e_lapor.util.Constant
-import com.lollipop.e_lapor.util.ResultOfNetwork
+import com.lollipop.imb.util.Constant
+import com.lollipop.imb.util.ResultOfNetwork
 import com.lollipop.imb.databinding.ActivityLoginBinding
 import com.lollipop.imb.service.model.LoginResult
 import com.lollipop.imb.viewModel.DataStoreViewModel

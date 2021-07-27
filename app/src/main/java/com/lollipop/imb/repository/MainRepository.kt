@@ -1,7 +1,7 @@
-package com.lollipop.e_lapor.repository
+package com.lollipop.imb.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.lollipop.e_lapor.util.ResultOfNetwork
+import com.lollipop.imb.util.ResultOfNetwork
 import com.lollipop.imb.service.model.*
 import com.lollipop.imb.service.network.RetrofitClient
 import kotlinx.coroutines.Dispatchers

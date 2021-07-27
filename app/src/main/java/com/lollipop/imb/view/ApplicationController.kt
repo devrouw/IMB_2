@@ -5,8 +5,8 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.createDataStore
-import com.lollipop.e_lapor.repository.DataStoreRepository
-import com.lollipop.e_lapor.repository.PREFERENCE_NAME
+import com.lollipop.imb.repository.DataStoreRepository
+import com.lollipop.imb.repository.PREFERENCE_NAME
 import com.lollipop.imb.BuildConfig
 import timber.log.Timber
 import timber.log.Timber.DebugTree

@@ -10,8 +10,8 @@ import android.view.Window
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.lollipop.e_lapor.util.Constant
-import com.lollipop.e_lapor.util.ResultOfNetwork
+import com.lollipop.imb.util.Constant
+import com.lollipop.imb.util.ResultOfNetwork
 import com.lollipop.imb.databinding.ActivityMainBinding
 import com.lollipop.imb.databinding.DialogConfirmationBinding
 import com.lollipop.imb.service.model.SliderResult

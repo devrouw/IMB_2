@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import com.lollipop.e_lapor.util.Constant
+import com.lollipop.imb.util.Constant
 import com.lollipop.imb.R
 import com.lollipop.imb.databinding.ImageLayoutSliderItemBinding
 import com.lollipop.imb.service.model.SliderResult

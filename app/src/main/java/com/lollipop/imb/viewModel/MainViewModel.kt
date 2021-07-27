@@ -3,8 +3,8 @@ package com.lollipop.imb.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lollipop.e_lapor.repository.MainRepository
-import com.lollipop.e_lapor.util.ResultOfNetwork
+import com.lollipop.imb.repository.MainRepository
+import com.lollipop.imb.util.ResultOfNetwork
 import com.lollipop.imb.service.model.*
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
