@@ -1,4 +1,4 @@
-package com.lollipop.e_lapor.repository
+package com.lollipop.imb.repository
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
