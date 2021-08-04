@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/novilawati/Desktop/Keystore/Genie2')
+            storePassword 'k82wq0oe'
+            keyAlias 'genie'
+            keyPassword 'k82wq0oe'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
