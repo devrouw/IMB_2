@@ -17,4 +17,14 @@
         <item name="windowMinWidthMajor">100%</item>
         <item name="windowMinWidthMinor">100%</item>
     </style>
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/yellow_500</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="boxCornerRadiusTopStart">6dp</item>
+        <item name="boxCornerRadiusTopEnd">6dp</item>
+        <item name="boxCornerRadiusBottomEnd">6dp</item>
+        <item name="boxCornerRadiusBottomStart">6dp</item>
+    </style>
 </resources>

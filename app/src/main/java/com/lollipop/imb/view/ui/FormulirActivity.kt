@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.Environment.getExternalStorageDirectory
 import android.os.Environment.getExternalStoragePublicDirectory
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -47,6 +48,22 @@ class FormulirActivity : AppCompatActivity() {
         PRDownloader.initialize(applicationContext, config)
 
         with(_binding){
+            ivImb.setOnClickListener {
+                _url =
+                    "http://imb.sha-dev.com/android/unggah/IMB1.pdf"
+                _filename = "IMB1.pdf"
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_DENIED){
+                        val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        requestPermissions(permissions, PERMISSION_CODE)
+                    } else{
+                        download(_url, _filename)
+                    }
+                }else{
+                    download(_url, _filename)
+                }
+            }
+
             ivSuratImb.setOnClickListener {
                 _url =
                     "http://imb.sha-dev.com/android/unggah/Surat_Kuasa_IMB.pdf"
@@ -140,28 +157,10 @@ class FormulirActivity : AppCompatActivity() {
         }
     }
 
-    private fun readFile(fileName: String) {
-        return try {
-            val reader = BufferedReader(InputStreamReader(baseContext.openFileInput(fileName)))
-            reader.use {
-                val sb = StringBuilder()
-                var line: String?
-                while (reader.readLine().also { line = it } != null) {
-                    sb.append(line)
-                }
-                val text = sb.toString()
-                Toast.makeText(baseContext, text, Toast.LENGTH_LONG).show()
-            }
-        } catch (ex: FileNotFoundException) {
-            Toast.makeText(baseContext, "Error in reading the file $fileName", Toast.LENGTH_SHORT)
-                .show()
-        }
-    }
-
     private fun download(url: String, fileName: String) {
         PRDownloader.download(
             url,
-            baseContext.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.absolutePath,
+            baseContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.absolutePath,
             fileName
         )
             .build()
@@ -179,7 +178,7 @@ class FormulirActivity : AppCompatActivity() {
 
                     // Read the file
 //                    readFile(fileName)
-                    Toast.makeText(baseContext,"$fileName berhasil di download di ${baseContext.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)?.absolutePath}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(baseContext,"$fileName berhasil di download di ${baseContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.absolutePath}", Toast.LENGTH_LONG).show()
                 }
 
                 override fun onError(error: com.downloader.Error?) {

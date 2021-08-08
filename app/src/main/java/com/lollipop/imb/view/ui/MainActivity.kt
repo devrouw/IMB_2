@@ -84,6 +84,8 @@ class MainActivity : AppCompatActivity() {
     private fun dialogBinding() {
         with(_dialogBinding) {
             btIya.setOnClickListener {
+                _dialog.dismiss()
+                Toast.makeText(this@MainActivity,"Anda berhasil keluar",Toast.LENGTH_LONG).show()
                 _viewModelDataStore.setLoginStatus(false)
             }
             btTidak.setOnClickListener {
