@@ -31,6 +31,7 @@ interface ShaNetwork {
     @POST("api.php")
     suspend fun pengajuan(
         @Part("case") case : RequestBody,
+        @Part formulir_imb : MultipartBody.Part,
         @Part scan_ektp : MultipartBody.Part,
         @Part scan_bukti_lunas_pbb : MultipartBody.Part,
         @Part scan_bukti_penguasaan_tanah : MultipartBody.Part,

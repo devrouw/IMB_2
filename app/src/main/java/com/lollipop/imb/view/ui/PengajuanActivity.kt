@@ -30,6 +30,7 @@ import java.io.File
 @RequiresApi(Build.VERSION_CODES.M)
 class PengajuanActivity : AppCompatActivity() {
 
+    val CODE_IMB = 107
     val CODE_EKTP = 100
     val CODE_PBB = 101
     val CODE_PENGUASAAN = 102
@@ -45,6 +46,7 @@ class PengajuanActivity : AppCompatActivity() {
     private lateinit var _viewModelDataStore: DataStoreViewModel
     private lateinit var _scanEktp: File
     private lateinit var _buktiPbb: File
+    private lateinit var _formulirIMB: File
     private lateinit var _scanImtn: File
     private lateinit var _dataSondir: File
     private lateinit var _kajian: File
@@ -61,6 +63,20 @@ class PengajuanActivity : AppCompatActivity() {
         initializeViewModel()
 
         with(_binding){
+            btUnggahImb.setOnClickListener {
+                //check permission at runtime
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
+                        val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        requestPermissions(permissions, PERMISSION_CODE)
+                    } else{
+                        openGalleryForPdf(CODE_IMB)
+                    }
+                }else{
+                    openGalleryForPdf(CODE_IMB);
+                }
+            }
+
             btUnggahEktp.setOnClickListener {
                 //check permission at runtime
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -161,6 +177,7 @@ class PengajuanActivity : AppCompatActivity() {
 
             btSubmit.setOnClickListener {
                 _viewModel.submitData("input_pengajuan",_nik, DataPengajuan(
+                    _formulirIMB,
                     _scanEktp,
                     _buktiPbb,
                     _scanImtn,
@@ -233,6 +250,10 @@ class PengajuanActivity : AppCompatActivity() {
             val _imageName = File(data?.data!!.path).name
             val file = File(filePath)
             when(requestCode){
+                CODE_IMB -> {
+                    _formulirIMB = file
+                    _binding.tvImb.text = _imageName
+                }
                 CODE_EKTP -> {
                     _scanEktp = file
                     _binding.tvEktp.text = _imageName
