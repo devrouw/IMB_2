@@ -25,6 +25,7 @@
     <string name="txt_andalalin">Scan Andalalin jika diperlukan</string>
     <string name="txt_kajian_lingkungan">Scan Kajian Lingkungan: UKL/UPL</string>
     <string name="txt_bukti_penguasaan">Scan Bukti Penguasaan Tanah (Sertifikat)/IMTN</string>
+    <string name="txt_permohonan">Formulir Permohonan IMB</string>
     <string-array name="txt_imb">
         <item>Memiliki IMB</item>
         <item>Tidak Memiliki IMB</item>

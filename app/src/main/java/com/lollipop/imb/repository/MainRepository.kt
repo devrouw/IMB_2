@@ -36,6 +36,8 @@ class MainRepository {
         }
 
     suspend fun pengajuan(case: String, noKtp: String, data: DataPengajuan){
+        val reqBody: RequestBody =
+            data.formulir_imb.asRequestBody("multipart/form-file".toMediaTypeOrNull())
         val reqBody1: RequestBody =
             data.scan_ektp.asRequestBody("multipart/form-file".toMediaTypeOrNull())
         val reqBody2: RequestBody =
@@ -51,6 +53,7 @@ class MainRepository {
         val reqBody7: RequestBody =
             data.gambar_bangunan.asRequestBody("multipart/form-file".toMediaTypeOrNull())
 
+        val partImage: MultipartBody.Part = MultipartBody.Part.createFormData("formulir_imb", data.formulir_imb.name, reqBody)
         val partImage1: MultipartBody.Part = MultipartBody.Part.createFormData("scan_ektp", data.scan_ektp.name, reqBody1)
         val partImage2: MultipartBody.Part = MultipartBody.Part.createFormData("scan_bukti_lunas_pbb", data.scan_bukti_lunas_pbb.name, reqBody2)
         val partImage3: MultipartBody.Part = MultipartBody.Part.createFormData("scan_bukti_penguasaan_tanah", data.scan_bukti_penguasaan_tanah.name, reqBody3)
@@ -62,6 +65,7 @@ class MainRepository {
         withContext(Dispatchers.IO){
             dataResult.postValue(ResultOfNetwork.Success(
                 RetrofitClient.ftp.pengajuan(case.toRequestBody(("text/plain".toMediaTypeOrNull())),
+                    partImage,
                     partImage1,
                     partImage2,
                     partImage3,
