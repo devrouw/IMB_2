@@ -87,6 +87,7 @@
                         android:layout_height="0dp"
                         android:text="@string/txt_scan_ktp"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -114,9 +115,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_scan_pbb"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -145,9 +147,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_bukti_penguasaan"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -175,9 +178,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_perhitungan_struktur"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -205,9 +209,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_kajian_lingkungan"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -235,9 +240,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_andalalin"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
@@ -265,9 +271,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:text="@string/txt_gambar_bangunan_teknis"
                         android:layout_weight="7"
+                        android:textSize="12sp"
                         android:textColor="@color/black_200"
                         android:textStyle="bold" />
 
