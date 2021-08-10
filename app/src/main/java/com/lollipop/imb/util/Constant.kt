@@ -9,5 +9,6 @@ class Constant {
 
     object URL {
         const val IMAGE_URL = "http://imb.sha-dev.com/assets/images/"
+        const val TES = "http://imb.sha-dev.com/assets/images/"
     }
 }
