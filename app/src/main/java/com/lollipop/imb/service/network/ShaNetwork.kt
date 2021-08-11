@@ -54,4 +54,20 @@ interface ShaNetwork {
         @Field("case") case : String,
         @Field("no_ktp") noKtp : String
     ) : PengajuanData
+
+    @FormUrlEncoded
+    @POST("api.php")
+    suspend fun dataPengajuan(
+        @Field("case") case : String,
+        @Field("id") id : String
+    ) : PengajuanData
+
+    @FormUrlEncoded
+    @POST("api.php")
+    suspend fun uploadBukti(
+        @Field("case") case : String,
+        @Field("id") id : String,
+        @Field("imageBase") imageBase : String,
+        @Field("imageName") imageName : String
+    ) : KirimData
 }

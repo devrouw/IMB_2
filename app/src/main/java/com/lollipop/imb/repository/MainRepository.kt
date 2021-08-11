@@ -18,6 +18,7 @@ class MainRepository {
     val loginResult = MutableLiveData<ResultOfNetwork<LoginData>>()
     val bannerResult = MutableLiveData<ResultOfNetwork<SliderData>>()
     val pengajuanResult = MutableLiveData<ResultOfNetwork<PengajuanData>>()
+    val dataPengajuanResult = MutableLiveData<ResultOfNetwork<PengajuanData>>()
     val progressBar = MutableLiveData<Boolean>()
 
     suspend fun daftarAkun(case: String, akun: Akun) =
@@ -91,6 +92,21 @@ class MainRepository {
             pengajuanResult.postValue(ResultOfNetwork.Success(
                 RetrofitClient.ftp.listPengajuan(case,noKtp)
             ))
+        }
+
+    suspend fun dataPengajuan(case: String, id: String) =
+        withContext(Dispatchers.IO){
+            dataPengajuanResult.postValue(ResultOfNetwork.Success(
+                RetrofitClient.ftp.dataPengajuan(case,id)
+            ))
+        }
+
+    suspend fun uploadBukti(case: String, id: String, imageBase: String, imageName: String) =
+        withContext(Dispatchers.IO){
+            dataResult.postValue(ResultOfNetwork.Success(
+                RetrofitClient.ftp.uploadBukti(case,id,imageBase,imageName)
+            ))
+            progressBar.postValue(false)
         }
 
 }

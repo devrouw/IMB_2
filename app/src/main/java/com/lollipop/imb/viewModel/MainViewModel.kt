@@ -13,13 +13,17 @@ import java.io.IOException
 class MainViewModel : ViewModel() {
     private val _repository = MainRepository()
 
+    val uploadBukti: LiveData<ResultOfNetwork<KirimData>>
     val daftarAkun: LiveData<ResultOfNetwork<KirimData>>
     val loginAkun: LiveData<ResultOfNetwork<LoginData>>
     val bannerData: LiveData<ResultOfNetwork<SliderData>>
     val listPengajuan: LiveData<ResultOfNetwork<PengajuanData>>
+    val dataPengajuan: LiveData<ResultOfNetwork<PengajuanData>>
     val progressBar: LiveData<Boolean>
 
     init {
+        this.dataPengajuan = _repository.dataPengajuanResult
+        this.uploadBukti = _repository.dataResult
         this.daftarAkun = _repository.dataResult
         this.loginAkun = _repository.loginResult
         this.bannerData = _repository.bannerResult
@@ -188,6 +192,76 @@ class MainViewModel : ViewModel() {
                             )
                     }
                     else -> _repository.pengajuanResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[Unknown] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                }
+            }
+        }
+    }
+
+    fun uploadBukti(case: String, id: String, imageBase: String, imageName: String) {
+        viewModelScope.launch {
+            try {
+                _repository.progressBar.postValue(true)
+                _repository.uploadBukti(case, id, imageBase, imageName)
+            } catch (throwable: Throwable) {
+                _repository.progressBar.postValue(false)
+                when (throwable) {
+                    is IOException -> _repository.dataResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[IO] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                    is HttpException -> {
+                        _repository.dataResult
+                            .postValue(
+                                ResultOfNetwork.Failure(
+                                    "[HTTP] error ${throwable.message} please retry",
+                                    throwable
+                                )
+                            )
+                    }
+                    else -> _repository.dataResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[Unknown] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                }
+            }
+        }
+    }
+
+    fun dataPengajuan(case: String, id: String) {
+        viewModelScope.launch {
+            try {
+                _repository.dataPengajuan(case, id)
+            } catch (throwable: Throwable) {
+                when (throwable) {
+                    is IOException -> _repository.dataPengajuanResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[IO] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                    is HttpException -> {
+                        _repository.dataPengajuanResult
+                            .postValue(
+                                ResultOfNetwork.Failure(
+                                    "[HTTP] error ${throwable.message} please retry",
+                                    throwable
+                                )
+                            )
+                    }
+                    else -> _repository.dataPengajuanResult
                         .postValue(
                             ResultOfNetwork.Failure(
                                 "[Unknown] error ${throwable.message} please retry",
