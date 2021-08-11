@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_ajuan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
@@ -44,7 +46,28 @@
         app:layout_constraintStart_toEndOf="@id/tv_status"
         app:layout_constraintTop_toBottomOf="@id/tv_pengajuan"/>
 
+    <ImageButton
+        android:id="@+id/bt_upload"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/v_bottom"
+        android:background="@drawable/ic_up_arrow"/>
+
+    <ImageButton
+        android:id="@+id/bt_download"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/v_bottom"
+        android:background="@drawable/ic_down_arrow_2"/>
+
     <View
+        android:id="@+id/v_bottom"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="5dp"
