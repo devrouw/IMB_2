@@ -24,8 +24,7 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.IMB"
-        tools:targetApi="m">
+        android:theme="@style/Theme.IMB">
         <provider
             android:authorities="com.lollipop.imb.fileprovider"
             android:name="androidx.core.content.FileProvider"

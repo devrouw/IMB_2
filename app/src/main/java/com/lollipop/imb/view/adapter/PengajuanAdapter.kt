@@ -69,7 +69,7 @@ class PengajuanAdapter : RecyclerView.Adapter<PengajuanAdapter.ViewHolder>() {
                         btDownload.visibility = View.GONE
                         tvStatusAjuan.text = "Menunggu Konfirmasi"
                     }
-                    "5" -> {
+                    "4" -> {
                         btUpload.visibility = View.GONE
                         btDownload.visibility = View.VISIBLE
                         tvStatusAjuan.text = "Pembayaran Diterima, IMB Terbit"
