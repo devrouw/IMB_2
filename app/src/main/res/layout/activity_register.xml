@@ -161,14 +161,13 @@
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:paddingHorizontal="10dp"
-                android:textSize="14sp"
-                android:inputType="textPassword"
+                android:layout_height="52dp"
                 android:layout_marginBottom="40dp"
-                android:textColor="@color/black_200"
                 android:background="@drawable/bg_edittext_yellow"
-                />
+                android:inputType="textPassword"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/black_200"
+                android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

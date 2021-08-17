@@ -26,8 +26,6 @@ import com.lollipop.imb.viewModel.MainViewModel
 import timber.log.Timber
 import java.io.File
 
-
-@RequiresApi(Build.VERSION_CODES.M)
 class PengajuanActivity : AppCompatActivity() {
 
     val CODE_IMB = 107

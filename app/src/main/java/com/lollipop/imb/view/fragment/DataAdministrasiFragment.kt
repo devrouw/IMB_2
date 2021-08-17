@@ -14,7 +14,6 @@ import com.lollipop.imb.databinding.FragmentDataAdministrasiBinding
 import com.lollipop.imb.viewModel.MainViewModel
 import timber.log.Timber
 
-@RequiresApi(Build.VERSION_CODES.M)
 class DataAdministrasiFragment : Fragment() {
     private var _bindingFragment: FragmentDataAdministrasiBinding? = null
     private val _binding get() = _bindingFragment!!

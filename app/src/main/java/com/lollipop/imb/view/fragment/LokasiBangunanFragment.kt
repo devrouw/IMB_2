@@ -13,7 +13,6 @@ import com.lollipop.imb.R
 import com.lollipop.imb.databinding.FragmentLokasiBangunanBinding
 import com.lollipop.imb.viewModel.MainViewModel
 
-@RequiresApi(Build.VERSION_CODES.M)
 class LokasiBangunanFragment : Fragment() {
     private var _bindingFragment: FragmentLokasiBangunanBinding? = null
     private val _binding get() = _bindingFragment!!

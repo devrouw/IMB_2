@@ -13,7 +13,6 @@ import com.lollipop.imb.R
 import com.lollipop.imb.databinding.FragmentDataTanahBinding
 import com.lollipop.imb.viewModel.MainViewModel
 
-@RequiresApi(Build.VERSION_CODES.M)
 class DataTanahFragment : Fragment() {
     private var _bindingFragment: FragmentDataTanahBinding? = null
     private val _binding get() = _bindingFragment!!
