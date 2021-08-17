@@ -12,7 +12,6 @@ import com.lollipop.imb.databinding.ItemListPengajuanBinding
 import com.lollipop.imb.service.model.PengajuanResult
 import com.shreyaspatil.MaterialDialog.MaterialDialog
 
-
 class PengajuanAdapter : RecyclerView.Adapter<PengajuanAdapter.ViewHolder>() {
     private var _items: MutableList<PengajuanResult> = ArrayList()
     private lateinit var onItemClickCallback: OnItemClickCallback

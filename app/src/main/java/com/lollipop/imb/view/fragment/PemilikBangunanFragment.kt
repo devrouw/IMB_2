@@ -15,9 +15,6 @@ import com.lollipop.imb.viewModel.MainViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 
-@FlowPreview
-@ExperimentalCoroutinesApi
-@RequiresApi(Build.VERSION_CODES.M)
 class PemilikBangunanFragment : Fragment() {
     private var _bindingFragment: FragmentPemilikBangunanBinding? = null
     private val _binding get() = _bindingFragment!!
