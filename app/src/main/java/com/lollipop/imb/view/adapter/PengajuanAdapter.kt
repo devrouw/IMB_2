@@ -1,5 +1,6 @@
 package com.lollipop.imb.view.adapter
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -38,12 +39,12 @@ class PengajuanAdapter : RecyclerView.Adapter<PengajuanAdapter.ViewHolder>() {
             .inflate(R.layout.item_list_pengajuan, parent, false)
     )
 
-    @RequiresApi(Build.VERSION_CODES.M)
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             val item = _items[position]
             with(binding) {
-                idPengajuan.text = "- ${item.id}"
+                idPengajuan.text = "- ${(position+1)}"
                 when(item.role){
                     "0" -> {
                         btUpload.visibility = View.GONE

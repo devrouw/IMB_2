@@ -28,7 +28,6 @@ class SliderAdapter: SliderViewAdapter<SliderAdapter.ViewHolder>() {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             val item = _items[position]
