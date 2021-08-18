@@ -214,7 +214,8 @@ class ListPengajuanActivity : AppCompatActivity() {
             val byte_arr1 = output1.toByteArray()
             _imageBase = Base64.encodeToString(byte_arr1, Base64.DEFAULT)
             if (filePath != null) {
-                _imageName = File(data.data!!.path).name
+                _imageName = File(data?.data?.path).name
+                Toast.makeText(this,_imageName,Toast.LENGTH_LONG).show()
             }
             uploadImage()
         }
