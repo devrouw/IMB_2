@@ -19,9 +19,11 @@ class MainViewModel : ViewModel() {
     val bannerData: LiveData<ResultOfNetwork<SliderData>>
     val listPengajuan: LiveData<ResultOfNetwork<PengajuanData>>
     val dataPengajuan: LiveData<ResultOfNetwork<PengajuanData>>
+    val listProvinsi: LiveData<ResultOfNetwork<ProvinsiData>>
     val progressBar: LiveData<Boolean>
 
     init {
+        this.listProvinsi = _repository.provinsiResult
         this.dataPengajuan = _repository.dataPengajuanResult
         this.uploadBukti = _repository.dataResult
         this.daftarAkun = _repository.dataResult
@@ -262,6 +264,40 @@ class MainViewModel : ViewModel() {
                             )
                     }
                     else -> _repository.dataPengajuanResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[Unknown] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                }
+            }
+        }
+    }
+
+    fun getListProvinsi(case: String) {
+        viewModelScope.launch {
+            try {
+                _repository.listProvinsi(case)
+            } catch (throwable: Throwable) {
+                when (throwable) {
+                    is IOException -> _repository.provinsiResult
+                        .postValue(
+                            ResultOfNetwork.Failure(
+                                "[IO] error ${throwable.message} please retry",
+                                throwable
+                            )
+                        )
+                    is HttpException -> {
+                        _repository.provinsiResult
+                            .postValue(
+                                ResultOfNetwork.Failure(
+                                    "[HTTP] error ${throwable.message} please retry",
+                                    throwable
+                                )
+                            )
+                    }
+                    else -> _repository.provinsiResult
                         .postValue(
                             ResultOfNetwork.Failure(
                                 "[Unknown] error ${throwable.message} please retry",

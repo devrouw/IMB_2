@@ -89,15 +89,14 @@
                 android:textColor="@color/black"
                 android:text="Provinsi"/>
 
-            <EditText
+            <Spinner
                 android:id="@+id/et_provinsi"
                 android:layout_width="match_parent"
                 android:paddingHorizontal="10dp"
                 android:layout_height="40dp"
                 android:textSize="14sp"
                 android:textColor="@color/black_200"
-                android:background="@drawable/bg_edittext_yellow"
-                />
+                android:background="@drawable/bg_edittext_yellow" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -161,7 +160,7 @@
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="40dp"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/bg_edittext_yellow"
                 android:inputType="textPassword"

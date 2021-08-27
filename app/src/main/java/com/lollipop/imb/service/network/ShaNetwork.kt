@@ -50,6 +50,12 @@ interface ShaNetwork {
 
     @FormUrlEncoded
     @POST("api.php")
+    suspend fun listProvinsi(
+        @Field("case") case : String
+    ) : ProvinsiData
+
+    @FormUrlEncoded
+    @POST("api.php")
     suspend fun listPengajuan(
         @Field("case") case : String,
         @Field("no_ktp") noKtp : String
